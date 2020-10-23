@@ -1,0 +1,18 @@
+{
+	"title": "enginesd_debian_base",
+	"description": "Starting point of all debian images",
+	"configuration": {
+		"DEBIAN_FRONTEND": "noninteractive"
+	},
+	"images": [
+		{
+			"type": "lxd",
+			"image": "images/debian/stretch/cloud"
+		}
+	],
+	"containers": [
+		{
+			"type": "lxd"
+		}
+	]
+}
