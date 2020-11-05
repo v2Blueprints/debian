@@ -2,12 +2,52 @@
 	"title": "enginesd_debian_base",
 	"description": "Starting point of all debian images",
 	"configuration": {
-		"DEBIAN_FRONTEND": "noninteractive"
+		"locale": "en_AU",
+		"charset": "UTF-8",
+		"a_build_time_env_var": "something",
+		"another_build_time_env_var": "somethingelse"
+	},
+	"os_packages": {
+		"adds": [
+			"apt-transport-https",
+			"locales-all",
+			"openssh-server",
+			"vim"
+		],
+		"removes": [
+			"bootlogd",
+			"dmidecode",
+			"eudev",
+			"gdbm-l10n",
+			"iptables",
+			"iputils-ping",
+			"kmod",
+			"krb5-locales",
+			"less",
+			"libip4tc0",
+			"libip6tc0",
+			"libiptc0",
+			"libkmod2",
+			"libnetfilter-conntrack3",
+			"libnfnetlink0",
+			"libnftnl11",
+			"libx11-6",
+			"libx11-data",
+			"libxau6",
+			"libxcb1",
+			"libxdmcp6",
+			"libxext6",
+			"libxmuu1",
+			"nano",
+			"tasksel",
+			"tasksel-data",
+			"xauth"
+		]
 	},
 	"images": [
 		{
 			"type": "lxd",
-			"image": "images/debian/stretch/cloud"
+			"image": "images:devuan/beowulf/cloud"
 		}
 	],
 	"containers": [
