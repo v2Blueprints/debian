@@ -49,10 +49,5 @@
 			"type": "lxd",
 			"image": "images:devuan/beowulf/cloud"
 		}
-	],
-	"containers": [
-		{
-			"type": "lxd"
-		}
 	]
 }
