@@ -1,0 +1,8 @@
+#!/bin/sh -e
+
+/tmp/build/scripts/post-provision-overlay 
+
+if test -f /tmp/overlay/post/scripts/post-provision
+	 then
+	 	  /tmp/overlay/post/scripts/post-provision
+fi

@@ -1,0 +1,7 @@
+#!/bin/sh -e
+
+ /tmp/build/scripts/pre-provision-overlay 
+if test -f /tmp/overlay/pre/scripts/provision-setup
+	then
+		/tmp/overlay/pre/scripts/provision-setup
+fi

@@ -1,4 +1,0 @@
-#!/bin/sh -e
-
-/tmp/injections/pre/scripts/apt &&\
-/tmp/injections/pre/scripts/locale 

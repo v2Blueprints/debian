@@ -1,8 +1,0 @@
-#!/bin/sh -e
-
-/tmp/build/scripts/post-provision-injections 
-
-if test -f /tmp/injections/post/scripts/post-provision
-	 then
-	 	  /tmp/injections/post/scripts/post-provision
-fi

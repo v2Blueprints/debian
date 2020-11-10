@@ -1,0 +1,4 @@
+#!/bin/sh -e
+
+/tmp/build/scripts/user/apt &&\
+/tmp/build/scripts/locale 
