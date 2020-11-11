@@ -1,5 +1,0 @@
-#!/bin/sh
-
-/tmp/overlay/pre/scripts/supervisor &&\
-/tmp/overlay/pre/scripts/inittab &&\
-/tmp/overlay/pre/scripts/sshd 

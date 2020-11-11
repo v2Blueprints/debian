@@ -1,4 +1,0 @@
-#!/bin/sh -e
-
-/tmp/overlay/pre/scripts/apt &&\
-/tmp/overlay/pre/scripts/locale 

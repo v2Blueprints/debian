@@ -1,5 +1,0 @@
-#!/bin/sh
-
-/tmp/build/scripts/user/supervisor &&\
-/tmp/build/scripts/user/inittab &&\
-/tmp/build/scripts/user/sshd 

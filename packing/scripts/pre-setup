@@ -1,0 +1,5 @@
+#!/bin/sh  -e
+
+/tmp/packing/scripts/apt &&\
+/tmp/packing/scripts/locale 
+ 

@@ -9,11 +9,15 @@
  fi
 
 # If this isn't included build will hang forever if dpkg asks any questions.
+export DEBIAN_FRONTEND=noninteractive
 
-
-if test -f /tmp/build/install_package_list
+if test -f /tmp/packing/vars/install_package_list
  then
-   ENGINES_PACKAGES=`cat /tmp/build/install_package_list`
+   ENGINES_PACKAGES=`cat /tmp/packing/vars/install_package_list`  
+    if test -f /tmp/packing/vars/buildtime_package_list
+   	 then
+     ENGINES_PACKAGES="$ENGINES_PACKAGES `cat /tmp/packing/vars/buildtime_package_list`"
+   fi
    apt-get -o Dpkg::Options::=--force-confnew  install -y --no-install-recommends $ENGINES_PACKAGES 
 fi
 

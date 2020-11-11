@@ -1,0 +1,28 @@
+#!/bin/sh -e
+
+/tmp/packing/scripts/post-package-overlay 
+
+#called after install to create configuration file
+#Setups up software
+#may overide an unit or add a conf.d/ file  
+#example configure db settings file
+# 
+if test -f /tmp/packing/scripts/user/post-setup
+	 then
+	 exec /tmp/packing/scripts/user/post-setup
+fi	 	
+	 	
+/tmp/packing/scripts/post-setup
+
+
+#actions to run after configuration
+#Boot strap the installation script
+#install software (non deb) 
+#first run type of stuff
+#migrate database, configure settings stored
+
+ 
+if test -f /tmp/packing/scripts/user/post-package-setup
+	 then
+	 exec /tmp/packing/scripts/user/post-package-setup
+fi

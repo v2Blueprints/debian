@@ -1,1 +1,0 @@
-This directory contains scripts to be run early

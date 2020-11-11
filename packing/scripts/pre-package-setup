@@ -1,0 +1,10 @@
+#!/bin/sh -e
+
+ /tmp/packing/scripts/pre-package-overlay 
+ 
+/tmp/packing/scripts/pre-setup
+ 
+if test -f /tmp/packing/scripts/user/pre-package-setup
+	then
+		/tmp/packing/scripts/user/pre-package-setup
+fi

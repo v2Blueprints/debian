@@ -1,0 +1,6 @@
+#!/bin/sh -e
+
+#just testing it run as part of this ummy test script
+#not implying this touch is required
+echo pre-package-setup >/tmp/pre-package-setup
+
