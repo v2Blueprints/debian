@@ -1,5 +1,0 @@
-#!/bin/sh -e
-
-/tmp/packing/scripts/supervisor &&\
-/tmp/packing/scripts/inittab &&\
-/tmp/packing/scripts/sshd 

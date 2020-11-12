@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-/tmp/packing/scripts/post-package-overlay 
+/opt/engines/packing/scripts/post-packages-overlay 
 
 #called after install to create configuration file
 #Setups up software
@@ -12,7 +12,7 @@ if test -f /tmp/packing/scripts/user/post-setup
 	 exec /tmp/packing/scripts/user/post-setup
 fi	 	
 	 	
-/tmp/packing/scripts/post-setup
+
 
 
 #actions to run after configuration
@@ -22,7 +22,7 @@ fi
 #migrate database, configure settings stored
 
  
-if test -f /tmp/packing/scripts/user/post-package-setup
+if test -f /tmp/packing/scripts/user/post-packages-setup
 	 then
-	 exec /tmp/packing/scripts/user/post-package-setup
+	 exec /tmp/packing/scripts/user/post-packages-setup
 fi

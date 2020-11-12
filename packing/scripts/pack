@@ -1,0 +1,9 @@
+#!/bin/sh -e
+
+if test -d /tmp/overlay/pre/ 
+ then
+  chown -R root:root /tmp/overlay/pre/ 
+  tar -C /tmp/overlay/pre/   -cf - . | tar -C / -xf -
+fi
+
+/opt/engines/packing/scripts/pack

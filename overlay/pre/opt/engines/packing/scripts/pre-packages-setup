@@ -1,0 +1,7 @@
+#!/bin/sh -e
+
+
+if test -f /tmp/packing/scripts/user/pre-packages-setup
+	then
+		/tmp/packing/scripts/user/pre-packages-setup
+fi
