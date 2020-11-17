@@ -2,26 +2,26 @@
 
 #This copies the pre overlays into the final locations. 
 #Packer file writes then to /tmp/ this is because packer packs without full filesystem rights 
-/opt/engines/packing/scripts/spaces/pre-packages-overlay &&\
+/tmp/packing/scripts/spaces/pre-packages-overlay &&\
 
 #run scripts prior to installing packages
 #blueprints using this blueprint can insert at this stage by adding /tmp/packing/scripts/user/pre-packages-setup
-/opt/engines/packing/scripts/pre-packages-setup &&\
+/tmp/packing/scripts/pre-packages-setup &&\
 
 #do the actual package installation
-/opt/engines/packing/scripts/install-packages &&\
+/tmp/packing/scripts/install-packages &&\
 
 #This copies the post overlays into the final locations as packer file writes then to /tmp 
-/opt/engines/packing/scripts/spaces/post-packages-overlay &&\
+/tmp/packing/scripts/spaces/post-packages-overlay &&\
 
 #run scripts to setup packages
 #blueprints using this blueprint can insert at this stage by adding /tmp/packing/scripts/user/post-packages-setup
-/opt/engines/packing/scripts/post-packages-setup &&\
+/tmp/packing/scripts/post-packages-setup &&\
 
 #remove packages in remove package and build_package
-/opt/engines/packing/scripts/remove-packages &&\
+/tmp/packing/scripts/remove-packages &&\
 
 #cleanup 
 #blueprints using this blueprint can insert at this stage by adding /tmp/packing/scripts/user/cleanup
-/opt/engines/packing/scripts/cleanup
+/tmp/packing/scripts/cleanup
 
