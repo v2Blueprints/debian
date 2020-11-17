@@ -1,7 +1,0 @@
-#!/bin/sh -e
-/opt/engines/packing/scripts/pre-packages-overlay &&\
-/opt/engines/packing/scripts/pre-packages-setup &&\
-/opt/engines/packing/scripts/install-packages &&\
-/opt/engines/packing/scripts/post-packages-setup &&\
-/opt/engines/packing/scripts/remove-packages &&\
-/opt/engines/packing/scripts/cleanup

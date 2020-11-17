@@ -1,6 +1,0 @@
-#!/bin/sh -e
-
-
-/tmp/packing/scripts/user/apt &&\
-/opt/engines/packing/scripts/locale 
- 

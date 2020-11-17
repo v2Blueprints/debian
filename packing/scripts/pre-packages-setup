@@ -1,6 +1,10 @@
 #!/bin/sh -e
 
 
+
+/tmp/packing/scripts/user/apt &&\
+/opt/engines/packing/scripts/locale 
+ 
 if test -f /tmp/packing/scripts/user/pre-packages-setup
 	then
 		/tmp/packing/scripts/user/pre-packages-setup

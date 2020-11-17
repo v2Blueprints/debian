@@ -1,6 +1,13 @@
 #!/bin/sh -e
 # From https://github.com/box-cutter/debian-vm/blob/master/script/cleanup.sh
 # Then from https://github.com/jakobadam/packer-qemu-templates
+ 
+#Allow blueprints to add custom clean_ups 
+if test -f /tmp/packing/scripts/user/clean_up
+		then
+		/tmp/packing/scripts/user/clean_up
+fi
+
 
 heading() {
   echo "==> $1 <=="
