@@ -1,15 +1,9 @@
 {
 	"title": "enginesd_debian_base",
 	"description": "Starting point of all debian images",
-	"configuration": {
-		"locale": "en_AU",
-		"charset": "UTF-8"
-	},
 	"binding_anchor": {
-		"variables": {
-			"locale": "en_AU",
-			"charset":  "UTF-8"
-		}
+		"locale": "en_AU",
+		"charset":  "UTF-8"
 	},
 	"os_packages": {
 		"adds": [
