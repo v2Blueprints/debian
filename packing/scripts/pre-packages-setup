@@ -2,8 +2,9 @@
 
 
 
-/tmp/packing/scripts/user/apt &&\
-/opt/engines/packing/scripts/locale 
+/tmp/packing/scripts/apt &&\
+/tmp/packing/scripts/locale  &&\
+/tmp/packing/scripts/repos 
  
 if test -f /tmp/packing/scripts/user/pre-packages-setup
 	then

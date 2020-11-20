@@ -1,9 +1,9 @@
 #!/bin/sh -e
 
 
-/tmp/packing/scripts/user/supervisor &&\
-/tmp/packing/scripts/user/inittab &&\
-/tmp/packing/scripts/user/sshd 
+/tmp/packing/scripts/supervisor &&\
+/tmp/packing/scripts/inittab &&\
+/tmp/packing/scripts/sshd 
 #called after install to create configuration file
 #Setups up software
 #may overide an unit or add a conf.d/ file  

@@ -1,0 +1,27 @@
+#!/bin/sh -e
+
+if test -f /tmp/packing/vars/repo_list
+ then
+ 	echo "" >> /tmp/packing/vars/repo_list
+	cat /tmp/packing/vars/repo_list | while read LINE
+     do
+     	keyid=`echo $LINE | awk '{print $3}'`
+      keyurl=`echo $LINE | awk '{print $2}'`
+      repo=`echo $LINE | awk '{print $1}'`
+       if ! test -z $key 
+       	 then
+       	 	if ! test -z $keyid
+       	     then
+       	 	   apt-key adv --keyserver  $keyurl --recv-keys $keyid
+       	 	else           
+             wget -qO - $keyurl | apt-key add -
+            fi
+      fi
+       if ! test -z $repo 
+       	then
+         add-apt-repository  -y $repo
+       fi
+   done
+
+apt-get -y update 	  
+ fi
