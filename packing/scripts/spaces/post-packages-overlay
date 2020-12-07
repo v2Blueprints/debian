@@ -1,9 +1,0 @@
-#!/bin/sh -e
-
-#need to think about ownership of injected files
-
-if test -d /tmp/overlay/post/ 
- then
-  chown -R root:root /tmp/overlay/post/ 
-  tar -C /tmp/overlay/post/   -cf - . | tar -C / -xf -
-fi
