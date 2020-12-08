@@ -1,0 +1,12 @@
+#!/bin/sh -e
+
+
+
+/tmp/packing/scripts/apt &&\
+/tmp/packing/scripts/locale  &&\
+/tmp/packing/scripts/repos 
+ 
+if test -f /tmp/packing/scripts/user/pre-packages-setup
+	then
+		/tmp/packing/scripts/user/pre-packages-setup
+fi

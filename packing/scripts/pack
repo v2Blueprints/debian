@@ -1,0 +1,27 @@
+#!/bin/sh -e
+
+#This copies the pre overlays into the final locations. 
+#Packer file writes then to /tmp/ this is because packer packs without full filesystem rights 
+/tmp/packing/scripts/spaces/pre-packages-overlay &&\
+
+#run scripts prior to installing packages
+#blueprints using this blueprint can insert at this stage by adding /tmp/packing/scripts/user/pre-packages-setup
+/tmp/packing/scripts/pre-packages-setup &&\
+
+#do the actual package installation
+/tmp/packing/scripts/install-packages &&\
+
+#This copies the post overlays into the final locations as packer file writes then to /tmp 
+/tmp/packing/scripts/spaces/post-packages-overlay &&\
+
+#run scripts to setup packages
+#blueprints using this blueprint can insert at this stage by adding /tmp/packing/scripts/user/post-packages-setup
+/tmp/packing/scripts/post-packages-setup &&\
+
+#remove packages in remove package and build_package
+/tmp/packing/scripts/remove-packages &&\
+
+#cleanup 
+#blueprints using this blueprint can insert at this stage by adding /tmp/packing/scripts/user/cleanup
+/tmp/packing/scripts/cleanup
+

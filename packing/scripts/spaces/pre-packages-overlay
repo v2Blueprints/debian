@@ -1,0 +1,13 @@
+#!/bin/sh -e
+
+# Given that the packer files provisioner can't set permissions because it runs
+# as the user running packer I have to change permissions in a shell
+# provisioner. Which is, er, this script!
+
+# In short this changes the file permissions and then uses tar move them into
+# the correct place.
+if test -d /tmp/overlay/pre/ 
+ then
+  chown -R root:root /tmp/overlay/pre/ 
+  tar -C /tmp/overlay/pre/   -cf - . | tar -C / -xf -
+fi
