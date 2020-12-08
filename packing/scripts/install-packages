@@ -1,0 +1,37 @@
+#!/bin/sh -e
+
+
+# This little gem is because udev isn't running and start-stop-daemon shits
+# itself trying to stop it and the removal of the entire package fails.
+ if test -f /var/lib/dpkg/info/eudev.prerm
+ then
+    sed -i '/^kill_udevd.*{/,/^}/ckill_udevd() {\n  true\n}' /var/lib/dpkg/info/eudev.prerm
+ fi
+
+# If this isn't included build will hang forever if dpkg asks any questions.
+export DEBIAN_FRONTEND=noninteractive
+
+if test -f /tmp/packing/vars/install_package_list
+ then
+   ENGINES_PACKAGES=`cat /tmp/packing/vars/install_package_list`  
+    if test -f /tmp/packing/vars/buildtime_package_list
+   	 then
+     ENGINES_PACKAGES="$ENGINES_PACKAGES `cat /tmp/packing/vars/buildtime_package_list`"
+   fi
+   apt-get -o Dpkg::Options::=--force-confnew  install -y --no-install-recommends $ENGINES_PACKAGES 
+fi
+
+#repository=http://files.phpmyadmin.net/phpMyAdmin/4.6.4/phpMyAdmin-4.6.4-all-languages.tar.gz"
+#extraction="tar -xzpf"
+#extracted_path="phpMyAdmin-4.6.4-all-languages"
+#destination="/usr/share/phpmyadmin"
+
+for package in `ls /tmp/packing/vars/packages/`
+ do 
+   . /tmp/packing/vars/packages/$package
+   wget $repository -o /tmp/package
+   cd /tmp
+   $extraction /tmp/package
+   mv /tmp/$extracted_path $destination
+ done
+
