@@ -5,14 +5,14 @@
 		"locale": "en_AU",
 		"charset": "UTF-8"
 	},
-	"packages": [
+	"other_packages": [
 		{
 			"descriptor": {
-				"repository": "https://github.com/grafana/loki/releases/download/v2.0.0/promtail-linux-amd64.zip",
-				"extraction": "unzip ",
-				"extracted_path": "promtail-linux-amd64",
-				"destination": "/usr/local/bin/"
-			}
+				"repository": "https://github.com/grafana/loki/releases/download/v2.0.0/promtail-linux-amd64.zip"
+			},
+			"extraction": "unzip",
+			"extracted_path": "promtail-linux-amd64",
+			"destination": "/usr/local/bin/"
 		}
 	],
 	"permissions": [
