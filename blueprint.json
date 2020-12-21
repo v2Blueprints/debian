@@ -27,7 +27,8 @@
 			"apt-transport-https",
 			"locales-all",
 			"openssh-server",
-			"vim"
+			"vim",
+			"sudo"
 		],
 		"removes": [
 			"bootlogd",

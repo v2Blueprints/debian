@@ -28,7 +28,9 @@ fi
 
 for package in `ls /tmp/packing/vars/packages/`
  do 
-   . /tmp/packing/vars/packages/$package
+   repository=`cat /tmp/packing/vars/packages/$package/url`
+   extraction=`cat /tmp/packing/vars/packages/$package/extraction`
+   destination=`cat /tmp/packing/vars/packages/$package/destination`
    wget $repository -o /tmp/package
    cd /tmp
    $extraction /tmp/package
