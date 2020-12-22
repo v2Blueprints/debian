@@ -28,7 +28,8 @@
 			"locales-all",
 			"openssh-server",
 			"vim",
-			"sudo"
+			"sudo",
+			"unzip"
 		],
 		"removes": [
 			"bootlogd",
