@@ -1,6 +1,8 @@
 {
-	"title": "enginesd_debian_base",
-	"description": "Starting point of all debian images",
+	"about": {
+		"title": "enginesd_debian_base",
+		"explanation": "Starting point of all debian images"
+	},
 	"binding_anchor": {
 		"locale": "en_AU",
 		"charset": "UTF-8"
