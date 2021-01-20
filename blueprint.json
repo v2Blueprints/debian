@@ -1,13 +1,15 @@
 {
-	"title": "enginesd_debian_base",
-	"description": "Starting point of all debian images",
-	"binding_anchor": {
+	"about": {
+		"title": "enginesd_debian_base",
+		"explanation": "Starting point of all debian images"
+	},
+	"binding_target": {
 		"locale": "en_AU",
 		"charset": "UTF-8"
 	},
 	"other_packages": [
 		{
-			"descriptor": {
+			"target": {
 				"repository": "https://github.com/grafana/loki/releases/download/v2.0.0/promtail-linux-amd64.zip"
 			},
 			"extraction": "unzip",
