@@ -47,3 +47,6 @@ heading "Remove the packer files directory"
 rm -rf /tmp/packing/
 rm -rf /tmp/overlay
 
+#Somewhere tmp is not being chmode correctly
+chmod oug+rwx /tmp
+
