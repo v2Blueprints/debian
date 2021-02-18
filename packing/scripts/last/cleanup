@@ -49,4 +49,5 @@ rm -rf /tmp/overlay
 
 #Somewhere tmp is not being chmode correctly
 chmod oug+rwx /tmp
+touch /var/log/last_has_run
 
