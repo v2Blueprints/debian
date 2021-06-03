@@ -80,6 +80,10 @@
   },
 	"images": [
 		{
+			"type": "docker",
+			"image": "some_repo/some_base_image_name:some_tag"
+		},
+		{
 			"type": "lxd",
 			"image": "images:devuan/beowulf/cloud"
 		}
