@@ -1,9 +1,9 @@
 #!/bin/sh -e
 
-if test -f /tmp/packing/vars/repo_list
+if test -f /tmp/packing/early/repo_list
  then
- 	echo "" >> /tmp/packing/vars/repo_list
-	cat /tmp/packing/vars/repo_list | while read LINE
+ 	echo "" >> /tmp/packing/early/repo_list
+	cat /tmp/packing/early/repo_list | while read LINE
      do
      	keyid=`echo $LINE | awk '{print $3}'`
       keyurl=`echo $LINE | awk '{print $2}'`

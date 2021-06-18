@@ -1,0 +1,25 @@
+FROM:debian
+ENV locale "en_AU"  #from configuration if set
+ENV charset" "UTF-8" #from configuration if set
+
+ADD packing/scripts /tmp/
+ADD packing/early /
+
+#Order here is important apt is dependant on local and repos
+RUN /tmp/packing/scripts/early/locale &\\
+    /tmp/packing/scripts/early/set_time_zone &\\
+    /tmp/packing/scripts/early/repos &&\\
+    /tmp/packing/scripts/early/apt
+    
+
+RUN ENGINES_PACKAGES="apt-transport-https unzip" /tmp/packing/scripts/late/install-packages
+
+RUN ENGINES_REMOVE_PACKAGES"bootlogd dmidecode eudev gdbm-l10n iptables kmod krb5-locales libip4tc0 libip6tc0 libiptc0 libkmod2 libnetfilter-conntrack3 libnfnetlink0 libnftnl11 tasksel tasksel-data " /tmp/packing/scripts/late/remove-packages
+
+RUN /tmp/packing/scripts/last/cleanup
+
+#NOTE The three RUN lines should be detect as a continous line of run statements and there be concatentated to a single RUN statement with &&\\n as the seperator 
+
+
+
+

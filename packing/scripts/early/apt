@@ -8,12 +8,12 @@ heading "Removing all existing sources.list{,.d} files"
 rm -f /etc/apt/sources.list
 rm -f /etc/apt/sources.list.d/*.list
 
-suite=${suite:=beowulf}
+suite=${suite:=debian}
 src=/etc/apt/sources.list.d/$suite.list
 
 heading "Setting up sources.list for: $suite"
 
-uri=http://deb.devuan.org/merged
+uri=http://deb.debian.org/merged
 component=main
 apt_conf=/etc/apt/apt.conf.d/01-minimal-install
 
