@@ -12,9 +12,9 @@ RUN /tmp/packing/scripts/early/locale &&\
     /tmp/packing/scripts/early/apt
     
 
-RUN ENGINES_PACKAGES="apt-transport-https unzip" /tmp/packing/scripts/late/install-packages
+RUN/tmp/packing/scripts/late/install-packages apt-transport-https unzip
 
-RUN ENGINES_REMOVE_PACKAGES"bootlogd dmidecode eudev gdbm-l10n iptables kmod krb5-locales libip4tc0 libip6tc0 libiptc0 libkmod2 libnetfilter-conntrack3 libnfnetlink0 libnftnl11 tasksel tasksel-data " /tmp/packing/scripts/late/remove-packages
+RUN /tmp/packing/scripts/late/remove-packages bootlogd dmidecode eudev gdbm-l10n iptables kmod krb5-locales libip4tc0 libip6tc0 libiptc0 libkmod2 libnetfilter-conntrack3 libnfnetlink0 libnftnl11 tasksel tasksel-data 
 
 RUN /tmp/packing/scripts/last/cleanup
 
