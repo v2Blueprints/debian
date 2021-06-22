@@ -2,7 +2,7 @@ FROM debian
 ENV locale "en_AU"  #from configuration if set
 ENV charset" "UTF-8" #from configuration if set
 
-ADD packing/scripts/ /tmp/
+ADD packing/scripts/ /tmp/packing/scripts/
 ADD packing/early/ /
 
 #Order here is important apt is dependant on local and repos
