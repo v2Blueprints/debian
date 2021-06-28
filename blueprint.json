@@ -16,8 +16,7 @@
 	"system_packages": {
 		"adds": [
 			"apt-transport-https",
-			"unzip",
-			"locales"
+			"unzip"
 		],
 		"removes": [
 			"bootlogd",
