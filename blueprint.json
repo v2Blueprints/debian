@@ -56,6 +56,10 @@
 		{
 			"type": "docker",
 			"image": "debian"
+		},
+		{
+			"type": "lxd",
+			"image": "images:devuan/beowulf/cloud"
 		}
 	]
 }
