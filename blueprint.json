@@ -6,7 +6,7 @@
 	"configuration": {
 		"locale": "en_AU",
 		"charset": "UTF-8",
-		"timezone": "SystemConfig(default_timezone)"
+		"timezone": "^^system_config.default_timezone^^"
 	},
 	"binding_target": {
 		"locale": "^^configuration.locale^^",
