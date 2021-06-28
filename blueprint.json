@@ -10,8 +10,8 @@
 	},
 	"binding_target": {
 		"locale": "^^configuration.locale^^",
-		"charset": "^^configuration.locale^^",
-		"timezone": "^^configuration.locale^^"
+		"charset": "^^configuration.charset^^",
+		"timezone": "^^configuration.timezone^^"
 	},
 	"system_packages": {
 		"adds": [
