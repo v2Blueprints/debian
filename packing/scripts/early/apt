@@ -4,26 +4,26 @@ heading() {
   echo "==> $1 <=="
 }
 
-heading "Removing all existing sources.list{,.d} files"
-rm -f /etc/apt/sources.list
-rm -f /etc/apt/sources.list.d/*.list
+#heading "Removing all existing sources.list{,.d} files"
+#rm -f /etc/apt/sources.list
+#rm -f /etc/apt/sources.list.d/*.list
 
-suite=${suite:=debian}
-src=/etc/apt/sources.list.d/$suite.list
+#suite=${suite:=debian}
+#src=/etc/apt/sources.list.d/$suite.list
 
-heading "Setting up sources.list for: $suite"
+#heading "Setting up sources.list for: $suite"
 
-uri=http://deb.debian.org/merged
-component=main
+#uri=http://deb.debian.org/merged
+#component=main
 apt_conf=/etc/apt/apt.conf.d/01-minimal-install
 
-suites="$suite $suite-updates $suite-backports $suite-security"
+#suites="$suite $suite-updates $suite-backports $suite-security"
 
 # Install a sensible sources.list
-printf "# Set up by packer - probably best not to touch it.\n\n" > $src
-for s in $suites; do
-  echo "deb $uri $s $component" >> $src
-done
+#printf "# Set up by packer - probably best not to touch it.\n\n" > $src
+#for s in $suites; do
+#  echo "deb $uri $s $component" >> $src
+#done
 
 # Ensure we only install the required packages
 # This came from: https://git.devuan.org/dev1fanboy/Upgrade-Install-Devuan/wikis/Upgrade-to-Devuan-and-minimalism

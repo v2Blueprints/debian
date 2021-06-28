@@ -9,7 +9,7 @@ if test -z "$locale" -o -z "$charset"
 	 	echo "locale/charset not set"
 	 	exit
 	 fi
-	
+apt-get update
 apt-get install locales
 echo "LANG=$locale.$charset" > /etc/default/locale
 echo "$locale.$charset $charset" > /etc/locale.gen
