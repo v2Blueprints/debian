@@ -12,10 +12,7 @@ if test -z "$locale" -o -z "$charset"
 	
 export DEBIAN_FRONTEND=noninteractive
 
-#FIX ME This update is here beause apt is run latter
-apt-get update
 
-apt-get install -y locales
 echo "LANG=$locale.$charset" > /etc/default/locale
 echo "$locale.$charset $charset" > /etc/locale.gen
 
