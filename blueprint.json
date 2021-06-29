@@ -39,22 +39,26 @@
 			"type": "embed",
 			"target": {
 				"repository": "https://github.com/v2Blueprints/locale_embed"
+			},
+			"configuration": {
+				"locale": "en_AU",
+				"charset": "UTF-8"
 			}
 		}
 	],
 	"packing": {
-    "early": [
-	 "locale",
-      "apt",
-      "locale",
-      "repos"
-    ],
+		"early": [
+			"locale",
+			"apt",
+			"locale",
+			"repos"
+		],
 		"late": [
 		],
 		"last": [
-      "cleanup"
-    ]
-  },
+			"cleanup"
+		]
+	},
 	"images": [
 		{
 			"type": "docker",
