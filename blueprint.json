@@ -21,7 +21,6 @@
 		"removes": [
 			"bootlogd",
 			"dmidecode",
-			"eudev",
 			"gdbm-l10n",
 			"iptables",
 			"iputils-ping",
