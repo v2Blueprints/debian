@@ -4,13 +4,9 @@
 		"explanation": "Docker Base for debian images"
 	},
 	"configuration": {
-		"locale": "en_AU",
-		"charset": "UTF-8",
 		"timezone": "^^system_config.default_timezone^^"
 	},
 	"binding_target": {
-		"locale": "^^configuration.locale^^",
-		"charset": "^^configuration.charset^^",
 		"timezone": "^^configuration.timezone^^"
 	},
 	"system_packages": {
@@ -38,6 +34,14 @@
 			"tasksel-data"
 		]
 	},
+	"bindings": [
+		{
+			"type": "embed",
+			"target": {
+				"repository": "https://github.com/v2Blueprints/locale_embed"
+			}
+		}
+	],
 	"packing": {
     "early": [
 	 "locale",
