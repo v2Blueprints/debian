@@ -13,7 +13,8 @@
 		"adds": [
 			"apt-transport-https",
 			"unzip",
-			"wget"
+			"wget",
+			"ca-certificates"
 		],
 		"removes": [
 			"bootlogd",
