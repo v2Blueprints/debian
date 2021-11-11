@@ -1,74 +1,61 @@
 {
-	"about": {
-		"title": "enginesd_debian_base",
-		"explanation": "Docker Base for debian images"
-	},
-	"configuration": {
-		"timezone": "^^system_config.default_timezone^^"
-	},
-	"binding_target": {
-		"timezone": "^^configuration.timezone^^"
-	},
-	"system_packages": {
-		"adds": [
-			"apt-transport-https",
-			"unzip",
-			"wget",
-			"ca-certificates"
-		],
-		"removes": [
-			"bootlogd",
-			"dmidecode",
-			"gdbm-l10n",
-			"iptables",
-			"iputils-ping",
-			"kmod",
-			"krb5-locales",
-			"less",
-			"libip4tc0",
-			"libip6tc0",
-			"libiptc0",
-			"libkmod2",
-			"libnetfilter-conntrack3",
-			"libnfnetlink0",
-			"libnftnl11",
-			"tasksel",
-			"tasksel-data"
-		]
-	},
-	"bindings": [
-		{
-			"type": "embed",
-			"target": {
-				"repository": "https://github.com/v2Blueprints/locale_embed"
-			},
-			"configuration": {
-				"locale": "en_AU",
-				"charset": "UTF-8"
-			}
-		}
-	],
-	"packing": {
-		"early": [
-			"locale",
-			"apt",
-			"locale",
-			"repos"
-		],
-		"late": [
-		],
-		"last": [
-			"cleanup"
-		]
-	},
-	"images": [
-		{
-			"type": "docker",
-			"image": "debian"
-		},
-		{
-			"type": "lxd",
-			"image": "images:devuan/beowulf/cloud"
-		}
-	]
+  "identifier": "enginesd_debian_base",
+  "about": {
+    "title": "enginesd_debian_base",
+    "explanation": "Docker Base for debian images"
+  },
+  "configuration": {
+    "timezone": "^^system_config.default_timezone^^"
+  },
+  "binding_target": {
+    "timezone": "^^configuration.timezone^^"
+  },
+  "system_packages": {
+    "adds": [
+      "apt-transport-https",
+      "unzip",
+      "wget",
+      "ca-certificates"
+    ],
+    "removes": [
+      "bootlogd",
+      "dmidecode",
+      "gdbm-l10n",
+      "iptables",
+      "iputils-ping",
+      "kmod",
+      "krb5-locales",
+      "less",
+      "libiptc0",
+      "libkmod2",
+      "libnetfilter-conntrack3",
+      "libnfnetlink0",
+      "libnftnl11",
+      "tasksel",
+      "tasksel-data"
+    ]
+  },
+  "bindings": [
+    {
+      "type": "embed",
+      "configuration": {
+        "locale": "en_AU",
+        "charset": "UTF-8"
+      },
+      "target": {
+        "repository": "https://github.com/MarkRatjens/locale_embed"
+      }
+    }
+  ],
+  "images": [
+    {
+      "type": "docker",
+      "image": "debian",
+      "output_name": "^^blueprint_identifier^^"
+    },
+    {
+      "type": "lxd",
+      "image": "images:devuan/beowulf/cloud"
+    }
+  ]
 }
