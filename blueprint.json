@@ -49,13 +49,17 @@
   ],
   "images": [
     {
-      "type": "docker",
-      "image": "debian",
-      "output_name": "^^blueprint_identifier^^"
+      "runtimes": [
+        "docker"
+      ],
+      "identifier": "debian",
+      "output_identifier": "^^blueprint_identifier^^"
     },
     {
-      "type": "lxd",
-      "image": "images:devuan/beowulf/cloud"
+      "runtimes": [
+        "lxd"
+      ],
+      "identifier": "images:devuan/beowulf/cloud"
     }
   ]
 }
