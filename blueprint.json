@@ -53,7 +53,7 @@
         "docker"
       ],
       "identifier": "debian",
-      "output_identifier": "^^blueprint_identifier^^"
+      "output_identifier": "enginesd_debian_base"
     },
     {
       "runtimes": [
