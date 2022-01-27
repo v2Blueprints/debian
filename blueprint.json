@@ -7,9 +7,6 @@
   "configuration": {
     "timezone": "^^system_config.default_timezone^^"
   },
-  "binding_target": {
-    "timezone": "^^configuration.timezone^^"
-  },
   "system_packages": {
     "adds": [
       "apt-transport-https",
@@ -38,10 +35,6 @@
   "bindings": [
     {
       "type": "embed",
-      "configuration": {
-        "locale": "en_AU",
-        "charset": "UTF-8"
-      },
       "target": {
         "repository": "https://github.com/v2Blueprints/locale_embed"
       }
