@@ -4,9 +4,6 @@
     "title": "enginesd_debian_base",
     "explanation": "Docker Base for debian images"
   },
-  "configuration": {
-    "timezone": "^^system_config.default_timezone^^"
-  },
   "system_packages": {
     "adds": [
       "apt-transport-https",
