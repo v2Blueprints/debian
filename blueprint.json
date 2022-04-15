@@ -1,7 +1,7 @@
 {
-  "identifier": "enginesd_debian_base",
+  "identifier": "debian",
   "about": {
-    "title": "enginesd_debian_base",
+    "title": "engines debian base",
     "explanation": "Docker Base for debian images"
   },
   "system_packages": {
@@ -29,27 +29,5 @@
       "tasksel-data"
     ]
   },
-  "bindings": [
-    {
-      "type": "embed",
-      "target": {
-        "repository": "https://github.com/v2Blueprints/locale_embed"
-      }
-    }
-  ],
-  "images": [
-    {
-      "runtimes": [
-        "docker"
-      ],
-      "identifier": "debian",
-      "output_identifier": "enginesd_debian_base"
-    },
-    {
-      "runtimes": [
-        "lxd"
-      ],
-      "identifier": "images:devuan/beowulf/cloud"
-    }
-  ]
+  "bindings": []
 }
